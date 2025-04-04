@@ -39,7 +39,7 @@ public class UserResource {
     @PutMapping("/update/{id}")
     public ResponseEntity<UserDTO> update(@PathVariable(name = "id") Long id, @RequestBody UserDTO userDTO) {
         UserDTO response = this.userService.updateById(id,userDTO);
-        return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(response);
     }
 
     @DeleteMapping("/delete/{id}")
